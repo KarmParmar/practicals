@@ -1,27 +1,63 @@
-#include <stdio.h>
-#define N 5
-
-void printMaze(int maze[N][N]) {
-    printf("Input Maze (0 = Path, 1 = Wall):\n");
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            printf("%d ", maze[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-
-int main() {
-    int maze[N][N] = {
-        {0, 1, 0, 0, 0},
-        {0, 1, 0, 1, 0},
-        {0, 0, 0, 1, 0},
-        {1, 1, 0, 0, 0},
-        {0, 0, 0, 1, 0}
-    };
-    printMaze(maze);
-    return 0;
+import java.util.*; 
+public class BubbleSort { 
+    public static void bubble(int[] arr) { 
+        for (int turn = 0; turn < arr.length - 1; turn++) { 
+            boolean swapped = false; 
+            for (int j = 0; j < arr.length - 1 - turn; j++) { 
+                if (arr[j] > arr[j + 1]) { 
+                    // Swapping 
+                    int temp = arr[j]; 
+                    arr[j] = arr[j + 1]; 
+                    arr[j + 1] = temp; 
+                    swapped = true; 
+                } 
+            } 
+            if (!swapped) { 
+                break; 
+            } 
+        } 
+    } 
+    public static void display(int[] arr) { 
+        for (int i = 0; i < arr.length; i++) { 
+            System.out.print(arr[i] + " "); 
+        } 
+        System.out.println(); 
+    } 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+        System.out.println("Choose the case:"); 
+        System.out.println("1. Best Case"); 
+        System.out.println("2. Average Case"); 
+        System.out.println("3. Worst Case"); 
+        int choice = sc.nextInt(); 
+        int size = 100; 
+        int[] arr = new int[size]; 
+        switch (choice) { 
+            case 1: 
+                for (int i = 0; i < size; i++) { 
+                    arr[i] = i + 1; 
+                } 
+                System.out.println("Best Case:"); 
+                break; 
+            case 2: 
+                Random rand = new Random(); 
+                for (int i = 0; i < size; i++) { 
+                    arr[i] = rand.nextInt(100); 
+                } 
+                System.out.println("Average Case:"); 
+                break; 
+            case 3: 
+                for (int i = 0; i < size; i++) { 
+                    arr[i] = size - i; 
+                } 
+                System.out.println("Worst Case:"); 
+                break; 
+            default: 
+                System.out.println("Invalid choice!"); 
+                return; 
+        } 
+        display(arr); 
+    } 
 }
 
 
