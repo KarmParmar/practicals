@@ -1,0 +1,23 @@
+
+import java.util.*;
+
+public class MergeSort {
+    public static void merge(int arr[], int left, int mid, int right) {
+        // ...
+    }
+
+    public static void sort(int arr[], int beg, int end) {
+        // ...
+    }
+
+    public static void Display(int arr[]) {
+        // ...
+    }
+
+    public static void main(String[] args) {
+        // ...
+    }
+}
+
+
+
