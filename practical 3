@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define N 5
+
+int isSafe(int maze[N][N], int x, int y) {
+    return (x >= 0 && x < N && y >= 0 && y < N && maze[x][y] == 0);
+}
+
+int main() {
+    int maze[N][N] = {
+        {0, 1, 0, 0, 0},
+        {0, 1, 0, 1, 0},
+        {0, 0, 0, 1, 0},
+        {1, 1, 0, 0, 0},
+        {0, 0, 0, 1, 0}
+    };
+    printf("Is Safe (0, 0): %d\n", isSafe(maze, 0, 0));
+    printf("Is Safe (1, 1): %d\n", isSafe(maze, 1, 1));
+    return 0;
+}
+
