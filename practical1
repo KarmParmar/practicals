@@ -1,0 +1,27 @@
+#include <stdio.h>
+#define N 5
+
+void printMaze(int maze[N][N]) {
+    printf("Input Maze (0 = Path, 1 = Wall):\n");
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%d ", maze[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+int main() {
+    int maze[N][N] = {
+        {0, 1, 0, 0, 0},
+        {0, 1, 0, 1, 0},
+        {0, 0, 0, 1, 0},
+        {1, 1, 0, 0, 0},
+        {0, 0, 0, 1, 0}
+    };
+    printMaze(maze);
+    return 0;
+}
+
+
